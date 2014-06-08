@@ -1,0 +1,60 @@
+<div class="page-header">
+  <h1>Loanterms</h1>
+</div>
+
+<p><a href="/loanterms/new" class="btn btn-primary">Add a New Loanterm</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Notional</th>
+      <th>Maturity</th>
+      <th>Term</th>
+      <th>Amortization</th>
+      <th>Index</th>
+      <th>Credit spread</th>
+      <th>Debt type</th>
+      <th>Closing</th>
+      <th>Probability</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loanterms.each do |loanterm| %>
+      <tr>
+        <td><%= loanterm.client_id %></td>
+        <td><%= loanterm.notional %></td>
+        <td><%= loanterm.maturity %></td>
+        <td><%= loanterm.term %></td>
+        <td><%= loanterm.amortization %></td>
+        <td><%= loanterm.index %></td>
+        <td><%= loanterm.credit_spread %></td>
+        <td><%= loanterm.debt_type %></td>
+        <td><%= loanterm.closing %></td>
+        <td><%= loanterm.probability %></td>
+        <td><%= loanterm.notes %></td>
+        <td>
+          <a href="/loanterms/<%= loanterm.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/loanterms/<%= loanterm.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_loanterm/<%= loanterm.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

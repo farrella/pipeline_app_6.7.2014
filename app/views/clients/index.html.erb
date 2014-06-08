@@ -1,0 +1,69 @@
+<div class="page-header">
+  <h1>Client
+      <form class="navbar-form navbar" role="search">
+        <div class="form-group">
+        <input type="text" name="keyword" class="form-control" placeholder="Search" value="<%= params[:keyword] %>">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+  </h1>
+</div>
+
+<div class="col-md-10">
+  <p><a href="/clients/new" class="btn btn-primary">Add a New Client</a></p>
+
+
+      <% @clients.each do |client| %>
+        <table class="table table-hover">
+            <tbody class="panel panel-primary" >
+               <tr>
+                    <td class=h3; col width="250" font=strong =><%= client.name %></td>
+
+                     <td>
+                      <a href="/clients/<%= client.id %>" 
+                         class="btn btn-primary btn-sm">Static Data</a>
+                      <a href="/loanterms/<%= client.id %>" 
+                         class="btn btn-primary btn-sm">Loan Terms & Quote History</a>
+                      <a href="/loanterms/<%= client.id %>/new" 
+
+
+
+                         class="btn btn-primary btn-sm">Add a New Loan</a>
+
+                  </td>
+                    <td></td>
+              </tr>
+
+              <tr>
+                    <td><%= client.marketer_id %></td>
+                    <td>Closing: 6/4/2014</td>
+                    <td></td>
+              </tr>
+
+              <tr>
+                    <td>Division</td>
+                    <td>Est. Fee Income: $25,000</td>
+                    <td></td>
+              </tr>
+
+              <tr>
+                    <td></td>
+                    <td>Probability: 50%</td>
+                    <td></td>
+              </tr>
+
+              <tr>
+                    <td></td>
+                    <td>
+                      <a href="/clients/<%= client.id %>/edit" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                      <a href="/delete_client/<%= client.id %>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                    <td></td>
+              </tr>
+          </tbody>
+          <% end %>
+
+      </table>
+
+<p><a href="/clients/new" class="btn btn-primary">Add a New Client</a></p>
+
+</div>

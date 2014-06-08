@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Loan Term for #<%= @client_id %></h1>
+</div>
+
+<% client_id.each do |thing| %>
+  
+
+
+    <dl class="dl-horizontal">
+      <dt>Client</dt>
+      <dd><%= @loanterm.client_id %></dd>
+
+      <dt>Notional</dt>
+      <dd><%= @loanterm.notional %></dd>
+
+      <dt>Maturity</dt>
+      <dd><%= @loanterm.maturity %></dd>
+
+      <dt>Term</dt>
+      <dd><%= @loanterm.term %></dd>
+
+      <dt>Amortization</dt>
+      <dd><%= @loanterm.amortization %></dd>
+
+      <dt>Index</dt>
+      <dd><%= @loanterm.index %></dd>
+
+      <dt>Credit spread</dt>
+      <dd><%= @loanterm.credit_spread %></dd>
+
+      <dt>Debt type</dt>
+      <dd><%= @loanterm.debt_type %></dd>
+
+      <dt>Closing</dt>
+      <dd><%= @loanterm.closing %></dd>
+
+      <dt>Probability</dt>
+      <dd><%= @loanterm.probability %></dd>
+
+      <dt>Notes</dt>
+      <dd><%= @loanterm.notes %></dd>
+
+    </dl>
+
+<% end %>
+

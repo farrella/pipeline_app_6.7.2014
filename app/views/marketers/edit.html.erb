@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h1>Edit Marketer #<%= @marketer.id %></h1>
+</div>
+
+<% if @marketer.errors.any? %>
+  <% @marketer.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_marketer/<%= @marketer.id %>" class="form-horizontal">
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">
+      Name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @marketer.name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for email -->
+  <div class="form-group">
+    <label for="email" class="col-sm-2 control-label">
+      Email
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="email" name="email" placeholder="Email" class="form-control" value="<%= @marketer.email %>">
+    </div>
+  </div>
+
+  <!-- Label and input for avatar_url -->
+  <div class="form-group">
+    <label for="avatar_url" class="col-sm-2 control-label">
+      Avatar url
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="avatar_url" name="avatar_url" placeholder="Avatar url" class="form-control" value="<%= @marketer.avatar_url %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Marketer" class="btn btn-primary">
+    </div>
+  </div>
+</form>

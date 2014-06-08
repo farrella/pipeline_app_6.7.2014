@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h1>Quotes</h1>
+</div>
+
+<p><a href="/quotes/new" class="btn btn-primary">Add a New Quote</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Loan terms</th>
+      <th>Product</th>
+      <th>Rate</th>
+      <th>Markup</th>
+      <th>Est fee</th>
+      <th>Premium</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotes.each do |quote| %>
+      <tr>
+        <td><%= quote.loan_terms_id %></td>
+        <td><%= quote.product %></td>
+        <td><%= quote.rate %></td>
+        <td><%= quote.markup %></td>
+        <td><%= quote.est_fee %></td>
+        <td><%= quote.premium %></td>
+        <td><%= quote.notes %></td>
+        <td>
+          <a href="/quotes/<%= quote.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/quotes/<%= quote.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/delete_quote/<%= quote.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

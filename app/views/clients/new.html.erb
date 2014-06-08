@@ -1,0 +1,111 @@
+<div class="page-header">
+  <h1>Add Client</h1>
+</div>
+
+<% if @client.errors.any? %>
+  <% @client.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_client" class="form-horizontal">
+  <!-- Label and input for name -->
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">
+      Name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @client.name %>">
+    </div>
+  </div>
+
+  <!-- Label and input for contact_person -->
+  <div class="form-group">
+    <label for="contact_person" class="col-sm-2 control-label">
+      Contact person
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_person" name="contact_person" placeholder="Contact person" class="form-control" value="<%= @client.contact_person %>">
+    </div>
+  </div>
+
+  <!-- Label and input for contact_email -->
+  <div class="form-group">
+    <label for="contact_email" class="col-sm-2 control-label">
+      Contact email
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_email" name="contact_email" placeholder="Contact email" class="form-control" value="<%= @client.contact_email %>">
+    </div>
+  </div>
+
+  <!-- Label and input for contact_phone -->
+  <div class="form-group">
+    <label for="contact_phone" class="col-sm-2 control-label">
+      Contact phone
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="contact_phone" name="contact_phone" placeholder="Contact phone" class="form-control" value="<%= @client.contact_phone %>">
+    </div>
+  </div>
+
+  <!-- Label and input for metavante_id -->
+  <div class="form-group">
+    <label for="metavante_id" class="col-sm-2 control-label">
+      Metavante
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="metavante_id" name="metavante_id" placeholder="Metavante" class="form-control" value="<%= @client.metavante_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for onboarding_status -->
+  <div class="form-group">
+    <label for="onboarding_status" class="col-sm-2 control-label">
+      Onboarding status
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="onboarding_status" name="onboarding_status" placeholder="Onboarding status" class="form-control" value="<%= @client.onboarding_status %>">
+    </div>
+  </div>
+
+  <!-- Label and input for marketer_id -->
+  <div class="form-group">
+    <label for="marketer_id" class="col-sm-2 control-label">
+      Marketer
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="marketer_id" name="marketer_id" placeholder="Marketer" class="form-control" value="<%= @client.marketer_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for notes -->
+  <div class="form-group">
+    <label for="notes" class="col-sm-2 control-label">
+      Notes
+    </label>
+    <div class="col-sm-10">
+      <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @client.notes %></textarea>
+    </div>
+  </div>
+
+  <!-- Label and input for banker_id -->
+  <div class="form-group">
+    <label for="banker_id" class="col-sm-2 control-label">
+      Banker
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="banker_id" name="banker_id" placeholder="Banker" class="form-control" value="<%= @client.banker_id %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Client" class="btn btn-primary">
+    </div>
+  </div>
+</form>

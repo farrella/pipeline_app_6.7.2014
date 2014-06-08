@@ -1,0 +1,130 @@
+<div class="page-header">
+  <h1>Edit Loanterm #<%= @loanterm.id %></h1>
+</div>
+
+<% if @loanterm.errors.any? %>
+  <% @loanterm.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<form action="/update_loanterm/<%= @loanterm.id %>" class="form-horizontal">
+  <!-- Label and input for client_id -->
+  <div class="form-group">
+    <label for="client_id" class="col-sm-2 control-label">
+      Client
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="client_id" name="client_id" placeholder="Client" class="form-control" value="<%= @loanterm.client_id %>">
+    </div>
+  </div>
+
+  <!-- Label and input for notional -->
+  <div class="form-group">
+    <label for="notional" class="col-sm-2 control-label">
+      Notional
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="notional" name="notional" placeholder="Notional" class="form-control" value="<%= @loanterm.notional %>">
+    </div>
+  </div>
+
+  <!-- Label and input for maturity -->
+  <div class="form-group">
+    <label for="maturity" class="col-sm-2 control-label">
+      Maturity
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="maturity" name="maturity" placeholder="Maturity" class="form-control" value="<%= @loanterm.maturity %>">
+    </div>
+  </div>
+
+  <!-- Label and input for term -->
+  <div class="form-group">
+    <label for="term" class="col-sm-2 control-label">
+      Term
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="term" name="term" placeholder="Term" class="form-control" value="<%= @loanterm.term %>">
+    </div>
+  </div>
+
+  <!-- Label and input for amortization -->
+  <div class="form-group">
+    <label for="amortization" class="col-sm-2 control-label">
+      Amortization
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="amortization" name="amortization" placeholder="Amortization" class="form-control" value="<%= @loanterm.amortization %>">
+    </div>
+  </div>
+
+  <!-- Label and input for index -->
+  <div class="form-group">
+    <label for="index" class="col-sm-2 control-label">
+      Index
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="index" name="index" placeholder="Index" class="form-control" value="<%= @loanterm.index %>">
+    </div>
+  </div>
+
+  <!-- Label and input for credit_spread -->
+  <div class="form-group">
+    <label for="credit_spread" class="col-sm-2 control-label">
+      Credit spread
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="credit_spread" name="credit_spread" placeholder="Credit spread" class="form-control" value="<%= @loanterm.credit_spread %>">
+    </div>
+  </div>
+
+  <!-- Label and input for debt_type -->
+  <div class="form-group">
+    <label for="debt_type" class="col-sm-2 control-label">
+      Debt type
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="debt_type" name="debt_type" placeholder="Debt type" class="form-control" value="<%= @loanterm.debt_type %>">
+    </div>
+  </div>
+
+  <!-- Label and input for closing -->
+  <div class="form-group">
+    <label for="closing" class="col-sm-2 control-label">
+      Closing
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="closing" name="closing" placeholder="Closing" class="form-control" value="<%= @loanterm.closing %>">
+    </div>
+  </div>
+
+  <!-- Label and input for probability -->
+  <div class="form-group">
+    <label for="probability" class="col-sm-2 control-label">
+      Probability
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="probability" name="probability" placeholder="Probability" class="form-control" value="<%= @loanterm.probability %>">
+    </div>
+  </div>
+
+  <!-- Label and input for notes -->
+  <div class="form-group">
+    <label for="notes" class="col-sm-2 control-label">
+      Notes
+    </label>
+    <div class="col-sm-10">
+      <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @loanterm.notes %></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Update Loanterm" class="btn btn-primary">
+    </div>
+  </div>
+</form>
