@@ -14,14 +14,20 @@
 
 <form action="/create_quote" class="form-horizontal">
   <!-- Label and input for loan_terms_id -->
+
+
   <div class="form-group">
-    <label for="loan_terms_id" class="col-sm-2 control-label">
-      Loan terms
+    <label for="client_id" class="col-sm-2 control-label">
+      Client
     </label>
     <div class="col-sm-10">
-      <input type="text" id="loan_terms_id" name="loan_terms_id" placeholder="Loan terms" class="form-control" value="<%= @quote.loan_terms_id %>">
+      <input type="text" value="<%= @client.name %>" class="form-control" disabled>
+      <input type="hidden" id="client_id" name="client_id" placeholder="Client" class="form-control" value="<%= @client.id %>">
     </div>
   </div>
+
+
+
 
   <!-- Label and input for product -->
   <div class="form-group">

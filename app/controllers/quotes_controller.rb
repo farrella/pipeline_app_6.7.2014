@@ -5,15 +5,17 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
+    @client = Client.find(params[:client_id])
   end
 
   def new
     @quote = Quote.new
+    @client = Client.find(params[:client_id])
   end
 
   def create
     @quote = Quote.new
-    @quote.loan_terms_id = params[:loan_terms_id]
+    @quote.loanterm_id = params[:loan_terms_id]
     @quote.product = params[:product]
     @quote.rate = params[:rate]
     @quote.markup = params[:markup]

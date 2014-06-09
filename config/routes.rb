@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   # Routes for the Quote resource:
   # CREATE
-  get('/quotes/new', { :controller => 'quotes', :action => 'new' })
+  get('/quotes/:client_id/new', { :controller => 'quotes', :action => 'new' })
   get('/create_quote', { :controller => 'quotes', :action => 'create' })
 
   # READ

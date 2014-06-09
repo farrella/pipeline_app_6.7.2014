@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Client:  <%= @client.name %></h1>
+  <h2>Client:  <%= @client.name %></h2>
 </div>
 
 <div>
@@ -34,32 +34,70 @@
   </dl>
 </div>
 
-<div>
-
-<h3>Loan Terms</h3>
-<dl class="dl-horizontal">
-  <dt>Name</dt>
-  <dd><%= @client.name %></dd>
-
-<% @client.loanterms.each do |loanterm| %>
-  <%= loanterm.notional %>
-  <%= loanterm.maturity %>
-  <%= loanterm.term %>
-  <%= loanterm.amortization %>
-  <%= loanterm.index %>
-  <%= loanterm.credit_spread %> 
-  <%= loanterm.debt_type %> 
-  <%= loanterm.created_at %> 
-  <%= loanterm.updated_at %>
-  <%= loanterm.notes %>
-
-
-
-
-
-  <% loanterm.quotes.each do |quote| %>
-    <%=quote.inspect %>
-  <% end %>
-<% end %>
+<div class="page-header">
+  <h3>Loan Terms</h3>
 
 </div>
+
+
+<% @client.loanterms.each do |loanterm| %>
+    <table class="col-md-4 col-md-offset-1" class="table table-hover">
+      <tbody class="panel panel-primary" >
+        <tr>
+          <td>Notional:</td>
+          <td><%= loanterm.notional %></td>
+        </tr>
+    
+        <tr>
+          <td>Maturity: </td>
+          <td><%= loanterm.maturity %></td>
+        </tr>
+      
+        <tr>
+          <td>Term: </td>
+          <td><%= loanterm.term %></td>
+        </tr>
+
+        <tr>
+          <td>Amortization: </td>
+          <td><%= loanterm.amortization %></td>
+        </tr>
+
+        <tr>
+          <td>Floating Index:</td>
+          <td><%= loanterm.index %></td>
+        </tr>
+
+        <tr>
+          <td>Credit Spread:</td>
+          <td><%= loanterm.credit_spread %></td>
+        </tr>
+
+        <tr>
+          <td>Loan Type:</td>
+          <td><%= loanterm.debt_type %></td>
+        </tr>
+
+        <tr>
+          <td>created at:</td>
+          <td><%= loanterm.created_at %></td>
+        </tr>
+
+        <tr>
+          <td>last updated at:</td>
+          <td><%= loanterm.updated_at %></td>
+        </tr>
+
+        <tr>
+          <td>Notes:</td>
+          <td><%= loanterm.notes %></td>
+        </tr>
+
+
+<% loanterm.quotes.each do |quote| %>
+      <td>quotes</td>
+      <%=quote.inspect %>
+<% end %>
+    <% end %>
+</div>
+
