@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606144313) do
+ActiveRecord::Schema.define(version: 20140609224505) do
 
   create_table "bankers", force: true do |t|
     t.string   "name"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140606144313) do
   end
 
   create_table "quotes", force: true do |t|
-    t.string   "loan_terms_id"
+    t.string   "loanterm_id"
     t.string   "product"
     t.float    "rate"
     t.float    "markup"

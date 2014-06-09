@@ -30,7 +30,12 @@
   <dt>Banker</dt>
   <dd><%= @client.banker_id %></dd>
 
-
-
 </dl>
+
+<% @client.loanterms.each do |loanterm| %>
+  <%= loanterm.inspect %>
+  <% loanterm.quotes.each do |quote| %>
+    <%=quote.inspect %>
+  <% end %>
+<% end %>
 

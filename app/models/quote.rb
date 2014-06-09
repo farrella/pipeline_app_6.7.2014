@@ -1,5 +1,5 @@
 class Quote < ActiveRecord::Base
 
-belongs_to:loanterms
+belongs_to :loanterm
 
 end
