@@ -5,6 +5,7 @@ class LoantermsController < ApplicationController
 
   def show
     @loanterm = Loanterm.find(params[:id])
+    @client = Client.find(params[:client_id])
   end
 
   def new
